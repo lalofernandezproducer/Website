@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lalo Fernández — Producción musical, mezcla y mastering</title>
+<meta name="description" content="Grabación, mezcla y mastering profesional para bandas y artistas de cualquier género. Trato cercano, plazos claros y un sonido a la altura de tu proyecto. Pide tu presupuesto.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lalo Fernández — Producción musical, mezcla y mastering">
+<meta property="og:description" content="Grabación, mezcla y mastering profesional para bandas y artistas de cualquier género. Pide tu presupuesto.">
+<meta property="og:image" content="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png">
+<link rel="icon" href="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-lalo-fav-32x32.jpg" sizes="32x32">
+<link rel="apple-touch-icon" href="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-lalo-fav-180x180.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Lalo Fernández","jobTitle":"Productor musical","url":"http://lalofernandezproducer.com/","sameAs":["https://www.facebook.com/LaloFernandez.Producer/","http://instagram.com/marrrbasdmg/"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://web.archive.org">
+<link rel="preload" as="image" href="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-IMG_8917.jpg" fetchpriority="high">
+<meta name="theme-color" content="#181410">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#181410;
+    --bg-panel:#211b15;
+    --bg-panel-2:#2a2219;
+    --line: rgba(243,236,222,.10);
+    --line-strong: rgba(243,236,222,.22);
+    --text:#f3ecde;
+    --text-muted:#a99c88;
+    --amber:#e8a33d;
+    --amber-soft: rgba(232,163,61,.16);
+    --brick:#b8453a;
+    --serif: 'Lora', Georgia, serif;
+    --display: 'Oswald', 'Arial Narrow', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:var(--display); text-transform:uppercase; margin:0; letter-spacing:.02em;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--amber);
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- level meter signature ---------- */
+  .meter{display:flex; align-items:flex-end; gap:4px; height:34px;}
+  .meter span{
+    width:4px; flex:0 0 auto; background:linear-gradient(to top, var(--amber), var(--brick));
+    animation: meter-bounce 1.6s ease-in-out infinite;
+    opacity:.85; border-radius:1px;
+  }
+  .meter span:nth-child(1){height:40%; animation-delay:0s;}
+  .meter span:nth-child(2){height:75%; animation-delay:.15s;}
+  .meter span:nth-child(3){height:55%; animation-delay:.3s;}
+  .meter span:nth-child(4){height:90%; animation-delay:.45s;}
+  .meter span:nth-child(5){height:35%; animation-delay:.6s;}
+  .meter span:nth-child(6){height:65%; animation-delay:.75s;}
+  .meter span:nth-child(7){height:50%; animation-delay:.9s;}
+  .meter span:nth-child(8){height:80%; animation-delay:1.05s;}
+  .meter span:nth-child(9){height:45%; animation-delay:1.2s;}
+  .meter span:nth-child(10){height:70%; animation-delay:1.35s;}
+  @keyframes meter-bounce{
+    0%,100%{transform:scaleY(.6);}
+    50%{transform:scaleY(1);}
+  }
+  .divider{
+    display:flex; justify-content:center; gap:5px; padding:0 0 0;
+    height:20px; overflow:hidden;
+  }
+  .divider span{width:3px; background:var(--line-strong); animation:meter-bounce 2.2s ease-in-out infinite;}
+  .divider span:nth-child(odd){animation-delay:.3s;}
+  .divider span:nth-child(3n){animation-delay:.6s;}
+
+  /* ---------- nav ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(24,20,16,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .brand{
+    font-family:var(--display); font-weight:700; font-size:1.15rem;
+    text-transform:uppercase; letter-spacing:.06em; text-decoration:none;
+  }
+  .brand span{color:var(--amber);}
+  nav.main-links{display:flex; gap:32px; align-items:center;}
+  nav.main-links a{
+    font-family:var(--mono); font-size:.82rem; text-transform:uppercase;
+    letter-spacing:.08em; text-decoration:none; color:var(--text-muted);
+    transition:color .15s;
+  }
+  nav.main-links a:hover{color:var(--amber);}
+  .btn{
+    display:inline-block; font-family:var(--mono); font-size:.8rem;
+    text-transform:uppercase; letter-spacing:.1em; text-decoration:none;
+    padding:12px 22px; border:1px solid var(--amber); color:var(--amber);
+    transition:background .15s, color .15s;
+  }
+  .btn:hover{background:var(--amber); color:#181410;}
+  .btn.solid{background:var(--amber); color:#181410;}
+  .btn.solid:hover{background:#f4b95d;}
+  .nav-toggle{display:none; background:none; border:1px solid var(--line-strong); color:var(--text); padding:8px 12px; font-size:1.1rem;}
+  .nav-close{display:none;}
+
+  /* ---------- language switch ---------- */
+  .lang-switch{display:flex; gap:6px;}
+  .lang-btn{
+    width:30px; height:22px; padding:0; border:1px solid var(--line-strong); background:var(--bg-panel);
+    cursor:pointer; overflow:hidden; opacity:.55; transition:opacity .15s, border-color .15s;
+  }
+  .lang-btn svg{width:100%; height:100%; display:block;}
+  .lang-btn:hover{opacity:.85;}
+  .lang-btn.active{opacity:1; border-color:var(--amber);}
+
+  /* ---------- back to top ---------- */
+  .back-to-top{
+    position:fixed; right:20px; bottom:20px; z-index:70;
+    width:48px; height:48px; border-radius:50%;
+    background:var(--bg-panel); border:1px solid var(--amber); color:var(--amber);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    opacity:0; visibility:hidden; transform:translateY(10px);
+    transition:opacity .2s ease, transform .2s ease, visibility 0s linear .2s, background .15s, color .15s;
+  }
+  .back-to-top.visible{opacity:1; visibility:visible; transform:translateY(0); transition:opacity .2s ease, transform .2s ease, background .15s, color .15s;}
+  .back-to-top:hover{background:var(--amber); color:#181410;}
+  .back-to-top svg{width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-bg{
+    position:absolute; inset:0; background-size:cover; background-position:center 20%;
+    filter: grayscale(45%) brightness(.38);
+  }
+  .hero-bg::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(24,20,16,.55) 0%, rgba(24,20,16,.85) 70%, var(--bg) 100%);
+  }
+  .hero-inner{
+    position:relative; padding:120px 24px 90px; text-align:center;
+  }
+  .hero .meter{justify-content:center; margin:0 auto 28px; opacity:.6;}
+  .hero-role{
+    font-family:var(--mono); font-size:.85rem; letter-spacing:.06em;
+    color:var(--text-muted); margin:14px 0 6px; text-transform:uppercase;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 6vw, 4.2rem);
+    line-height:1.05; max-width:880px; margin:0 auto;
+  }
+  .hero h1 em{font-style:normal; color:var(--amber);}
+  .hero p.lede{
+    font-family:var(--serif); font-style:italic; color:var(--text-muted);
+    font-size:1.15rem; max-width:560px; margin:22px auto 36px;
+  }
+  .hero-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+
+  section{padding:90px 0;}
+  .section-head{max-width:640px; margin:0 0 48px;}
+  .section-head h2{font-size:clamp(1.6rem, 3.5vw, 2.3rem); margin-top:10px;}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+
+  /* ---------- about ---------- */
+  .about{background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .about-grid{display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:center;}
+  .about-photo{
+    border:1px solid var(--line-strong); border-radius:50%; overflow:hidden;
+    aspect-ratio:1/1;
+  }
+  .about-photo img{width:100%; height:100%; object-fit:cover; object-position:center top;}
+  .about-text p{color:var(--text-muted); margin:0 0 16px;}
+  .about-text p:last-child{margin-bottom:0;}
+
+  /* ---------- process ---------- */
+  .process-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
+  .process-card{border-top:2px solid var(--amber); padding-top:18px;}
+  .process-card .num{font-family:var(--mono); color:var(--amber); font-size:.85rem;}
+  .process-card h3{font-size:1.05rem; margin:10px 0 10px; text-transform:none; font-family:var(--serif); font-weight:600;}
+  .process-card p{color:var(--text-muted); margin:0; font-size:.96rem;}
+
+  /* ---------- services ---------- */
+  .services{background:var(--bg-panel);}
+  .service-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .service-card{background:var(--bg-panel); padding:34px 28px;}
+  .service-card svg{width:34px; height:34px; stroke:var(--amber); fill:none; stroke-width:1.5; margin-bottom:20px; transition:transform .25s ease;}
+  .service-card:hover svg{transform:scale(1.15);}
+  .service-card h3{font-size:1rem; margin-bottom:12px;}
+  .service-card p{color:var(--text-muted); font-size:.92rem; margin:0;}
+
+  /* ---------- testimonial ---------- */
+  .testimonial{text-align:center;}
+  .testimonial blockquote{
+    font-family:var(--serif); font-style:italic; font-size:clamp(1.2rem,2.6vw,1.6rem);
+    max-width:760px; margin:0 auto 24px; color:var(--text);
+  }
+  .testimonial cite{
+    font-family:var(--mono); font-style:normal; font-size:.8rem; letter-spacing:.12em;
+    color:var(--amber); text-transform:uppercase;
+  }
+
+  /* ---------- portfolio ---------- */
+  .track{
+    border-top:1px solid var(--line);
+    display:grid; grid-template-columns:48px 1fr; gap:20px; align-items:center;
+    padding:22px 0;
+  }
+  .track:last-child{border-bottom:1px solid var(--line);}
+  .track-num{font-family:var(--mono); color:var(--amber); font-size:1.1rem;}
+  .track-title{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:12px;}
+  .track-title h3{font-family:var(--serif); text-transform:none; font-weight:600; font-size:1.15rem;}
+  .tag{
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--amber); border:1px solid var(--amber-soft); padding:3px 9px; white-space:nowrap;
+  }
+  audio{display:none;}
+  .player{display:flex; align-items:center; gap:18px;}
+  .play-btn{
+    flex:0 0 auto; width:46px; height:46px; border-radius:50%;
+    border:1px solid var(--amber); background:transparent; color:var(--amber);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    transition:background .15s, color .15s;
+  }
+  .play-btn:hover{background:var(--amber); color:#181410;}
+  .play-btn svg{width:15px; height:15px; fill:currentColor; stroke:none;}
+  .play-btn .icon-pause{display:none;}
+  .player.is-playing .icon-play{display:none;}
+  .player.is-playing .icon-pause{display:block;}
+  .player-bar{flex:1; min-width:0;}
+  .progress-track{
+    position:relative; height:5px; background:var(--line-strong); cursor:pointer;
+  }
+  .progress-fill{
+    position:absolute; inset:0 auto 0 0; width:0%; background:linear-gradient(90deg, var(--amber), var(--brick));
+  }
+  .progress-track:hover .progress-fill{background:linear-gradient(90deg, #f4b95d, var(--brick));}
+  .time-row{
+    display:flex; justify-content:space-between; margin-top:9px;
+    font-family:var(--mono); font-size:.72rem; color:var(--text-muted); letter-spacing:.04em;
+  }
+  .volume{flex:0 0 auto; display:flex; align-items:center; gap:9px;}
+  .vol-btn{
+    background:none; border:none; color:var(--text-muted); cursor:pointer;
+    padding:4px; display:flex; transition:color .15s;
+  }
+  .vol-btn:hover{color:var(--amber);}
+  .vol-btn svg{width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:1.6;}
+  .vol-btn .icon-muted{display:none;}
+  .player.is-muted .icon-vol{display:none;}
+  .player.is-muted .icon-muted{display:block;}
+  input[type="range"].vol-slider{
+    -webkit-appearance:none; appearance:none; width:70px; height:3px;
+    background:var(--line-strong); cursor:pointer; accent-color:var(--amber);
+  }
+  input[type="range"].vol-slider::-webkit-slider-thumb{
+    -webkit-appearance:none; width:11px; height:11px; border-radius:50%; background:var(--amber);
+  }
+  input[type="range"].vol-slider::-moz-range-thumb{
+    width:11px; height:11px; border-radius:50%; background:var(--amber); border:none;
+  }
+
+  /* ---------- cta banner ---------- */
+  .cta-banner{
+    background:var(--bg-panel-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    text-align:center;
+  }
+  .cta-banner h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin-bottom:14px;}
+  .cta-banner p{color:var(--text-muted); max-width:520px; margin:0 auto 30px;}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
+  .contact-side p{color:var(--text-muted);}
+  .direct-contact{display:flex; gap:14px; margin-top:26px;}
+  .icon-link{
+    width:44px; height:44px; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center;
+    text-decoration:none; transition:border-color .15s;
+  }
+  .icon-link:hover{border-color:var(--amber);}
+  .icon-link svg{width:19px; height:19px; stroke:var(--text); fill:none; stroke-width:1.6; transition:transform .25s ease, stroke .15s;}
+  .icon-link:hover svg{stroke:var(--amber); transform:scale(1.15);}
+
+  form.contact-form{display:grid; gap:18px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .field label{display:block; font-family:var(--mono); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;}
+  .field label .opt{text-transform:none; letter-spacing:0; opacity:.7;}
+  .field input, .field textarea{
+    width:100%; background:var(--bg-panel); border:1px solid var(--line-strong); color:var(--text);
+    padding:12px 14px; font-family:var(--serif); font-size:1rem;
+  }
+  .field input:focus, .field textarea:focus{border-color:var(--amber);}
+  .field-hint{margin:8px 0 0; font-size:.82rem; color:var(--text-muted);}
+  .field-hint.field-error{color:var(--brick);}
+  .checks{display:flex; gap:18px; flex-wrap:wrap; font-family:var(--mono); font-size:.82rem; color:var(--text-muted);}
+  .checks label{display:flex; gap:7px; align-items:center;}
+
+  .hp-field{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;}
+
+  .captcha-row{display:flex; gap:10px;}
+  .captcha-row input{flex:1;}
+  .captcha-refresh{
+    flex:0 0 auto; width:46px; background:var(--bg-panel); border:1px solid var(--line-strong);
+    color:var(--text-muted); font-size:1.1rem; cursor:pointer; transition:border-color .15s, color .15s;
+  }
+  .captcha-refresh:hover{border-color:var(--amber); color:var(--amber);}
+
+  .submit-btn{
+    justify-self:start; background:var(--amber); color:#181410; border:none;
+    font-family:var(--mono); text-transform:uppercase; letter-spacing:.1em; font-size:.85rem;
+    padding:14px 30px; cursor:pointer; transition:background .15s;
+  }
+  .submit-btn:hover{background:#f4b95d;}
+  .submit-btn:disabled{opacity:.5; cursor:not-allowed;}
+  .form-message{
+    font-family:var(--mono); font-size:.85rem; padding:12px 14px; border:1px solid var(--line-strong);
+  }
+  .form-message.success{color:var(--amber); border-color:var(--amber-soft);}
+  .form-message.error{color:var(--brick); border-color:var(--brick);}
+
+  footer.site-footer{padding:40px 0; border-top:1px solid var(--line);}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-inner .brand{font-size:.95rem;}
+  .footer-inner p{margin:0; color:var(--text-muted); font-size:.85rem;}
+
+  .sticky-cta{
+    position:fixed; bottom:18px; right:18px; z-index:60;
+  }
+
+  @media (max-width:880px){
+    .about-grid{grid-template-columns:1fr; text-align:center;}
+    .about-photo{max-width:220px; margin:0 auto;}
+    .process-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr; gap:44px;}
+    .field-row{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    nav.main-links{
+      position:fixed; inset:0; z-index:80;
+      background:rgba(24,20,16,.88);
+      backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+      flex-direction:column; padding:110px 28px 32px; gap:24px; align-items:flex-start;
+      transform:translateX(100%); visibility:hidden;
+      transition:transform .25s ease, visibility 0s linear .25s;
+    }
+    nav.main-links a{font-size:1rem;}
+    nav.main-links.open{transform:translateX(0); visibility:visible; transition:transform .25s ease;}
+    .nav-toggle{display:block; position:relative; z-index:90;}
+    .nav-close{
+      display:block; position:absolute; top:20px; right:24px;
+      background:none; border:1px solid var(--line-strong); color:var(--text);
+      width:38px; height:38px; font-size:1rem;
+    }
+    .nav-inner .btn.solid{display:none;}
+    body.nav-open{overflow:hidden;}
+    .service-grid{grid-template-columns:1fr;}
+    .track{grid-template-columns:32px 1fr;}
+    .play-btn{width:40px; height:40px;}
+    .vol-slider{width:44px;}
+    .hero-inner{padding:90px 20px 70px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner wrap">
+    <a href="#top" class="brand">Lalo <span>Fernández</span></a>
+    <nav class="main-links" id="main-links">
+      <button class="nav-close" id="nav-close" aria-label="Cerrar menú" data-i18n-aria="aria.closeMenu">✕</button>
+      <a href="#acerca" data-i18n="nav.about">Sobre mí</a>
+      <a href="#servicios" data-i18n="nav.services">Servicios</a>
+      <a href="#trabajos" data-i18n="nav.work">Trabajos</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn solid" data-i18n="nav.cta">Pide presupuesto</a>
+    <div class="lang-switch" role="group" aria-label="Idioma / Language">
+      <button class="lang-btn active" id="lang-es" data-lang="es" aria-label="Español" title="Español">
+        <svg viewBox="0 0 3 2"><rect width="3" height="2" fill="#AA151B"/><rect y="0.5" width="3" height="1" fill="#F1BF00"/></svg>
+      </button>
+      <button class="lang-btn" id="lang-en" data-lang="en" aria-label="English" title="English">
+        <svg viewBox="0 0 19 10">
+          <rect width="19" height="10" fill="#B22234"/>
+          <rect y="0.77" width="19" height="0.77" fill="#fff"/>
+          <rect y="2.31" width="19" height="0.77" fill="#fff"/>
+          <rect y="3.85" width="19" height="0.77" fill="#fff"/>
+          <rect y="5.38" width="19" height="0.77" fill="#fff"/>
+          <rect y="6.92" width="19" height="0.77" fill="#fff"/>
+          <rect y="8.46" width="19" height="0.77" fill="#fff"/>
+          <rect width="7.6" height="5.38" fill="#3C3B6E"/>
+        </svg>
+      </button>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-links" aria-label="Abrir menú" data-i18n-aria="aria.openMenu">☰</button>
+  </div>
+</header>
+
+<div id="top"></div>
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-IMG_8917.jpg');"></div>
+  <div class="hero-inner wrap">
+    <p class="eyebrow" data-i18n="hero.eyebrow">Grabación · Mezcla · Mastering</p>
+    <p class="hero-role" data-i18n="hero.role">Productor musical · Ingeniero de mezcla y mastering</p>
+    <h1 data-i18n-html="hero.title">Que tu tema suene<br><em>a disco terminado</em>, no a maqueta.</h1>
+    <p class="lede" data-i18n="hero.lede">Grabo, mezclo y masterizo música de cualquier género — del acústico al hardcore — con trato cercano y precios pensados para bandas, no para sellos discográficos.</p>
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn solid" data-i18n="hero.cta1">Pide tu presupuesto</a>
+      <a href="#trabajos" class="btn" data-i18n="hero.cta2">Escucha mi trabajo</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="acerca">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png" alt="Lalo Fernández" decoding="async">
+    </div>
+    <div class="about-text">
+      <p class="eyebrow" data-i18n="about.eyebrow">Acerca de Lalo</p>
+      <h2 data-i18n="about.title">De vocalista a productor, con los pies en el estudio</h2>
+      <p data-i18n="about.p1">Empecé como vocalista, guitarrista y bajista, y ese camino me llevó a la producción: ahí es donde encontré mi sitio. Desde entonces he estado involucrado en multitud de proyectos que han ido forjando mi experiencia profesional.</p>
+      <p data-i18n="about.p2">He producido, grabado, mezclado y masterizado música de todo tipo de géneros — desde acústicos y pop/rock, pasando por rap, hasta mi clientela habitual de metal y hardcore. Sea cual sea tu estilo, sé escuchar lo que estás buscando.</p>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow" data-i18n="process.eyebrow">Cómo trabajamos</p>
+      <h2 data-i18n="process.title">De tus pistas al lanzamiento, en tres pasos</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-card">
+        <span class="num">01</span>
+        <h3 data-i18n="process.1.title">Cuéntame tu proyecto</h3>
+        <p data-i18n="process.1.desc">Me mandas tu maqueta o tus pistas y hablamos de género, referencias y plazos. Sin compromiso.</p>
+      </div>
+      <div class="process-card">
+        <span class="num">02</span>
+        <h3 data-i18n="process.2.title">Trabajamos el sonido</h3>
+        <p data-i18n="process.2.desc">Grabo, mezclo o masterizo con rondas de revisión hasta que el resultado suene exactamente como quieres.</p>
+      </div>
+      <div class="process-card">
+        <span class="num">03</span>
+        <h3 data-i18n="process.3.title">Listo para publicar</h3>
+        <p data-i18n="process.3.desc">Recibes tu master final, coherente y a punto para Spotify, iTunes y cualquier plataforma de streaming.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="services.eyebrow">Servicios</p>
+      <h2 data-i18n="services.title">Todo lo que tu tema necesita</h2>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="service-grid">
+      <div class="service-card">
+        <svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z"/><path d="M19 11a7 7 0 0 1-14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg>
+        <h3 data-i18n="service.rec.title">Grabación</h3>
+        <p data-i18n="service.rec.desc">La parte más importante del proceso. Grabo tus mejores tomas con la máxima calidad y el mejor equipo.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+        <h3 data-i18n="service.mix.title">Mezcla</h3>
+        <p data-i18n="service.mix.desc">Convierto tus pistas crudas, grabadas en cualquier estudio, en algo profesional y pulido.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 8-8"/><path d="M4 12a8 8 0 0 0 8 8"/><path d="M12 4a8 8 0 0 1 8 8"/><path d="M12 20a8 8 0 0 0 8-8"/><circle cx="12" cy="12" r="2"/></svg>
+        <h3 data-i18n="service.master.title">Mastering</h3>
+        <p data-i18n="service.master.desc">Un master final coherente que suena bien en todos los sistemas de escucha y servicios de streaming.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1Z"/></svg>
+        <h3 data-i18n="service.other.title">Otros servicios</h3>
+        <p data-i18n="service.other.desc">Reamping, edición de instrumentos y de voz — incluyendo pitch tuning — y lo que tu tema necesite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="wrap">
+    <div class="divider" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+  <div class="wrap" style="margin-top:36px;">
+    <blockquote data-i18n-html="testimonial1.quote">“En la grabación con Lalo estuvimos muy cómodos, desde el primer momento demostró profesionalidad. También hubo momentos de risas, eso nos hizo sentirnos mucho más cómodos. Buena puntualidad con los adelantos semanales, consiguió un sonido profesional. La relación calidad precio insuperable.”</blockquote>
+    <cite>— Minerva</cite>
+  </div>
+</section>
+
+<section id="trabajos">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow" data-i18n="trabajos.eyebrow">Mis trabajos</p>
+      <h2 data-i18n="trabajos.title">Del country al hardcore, grabado y mezclado a medida</h2>
+    </div>
+
+    <div class="track">
+      <span class="track-num">01</span>
+      <div>
+        <div class="track-title"><h3>Kenton Bryant</h3><span class="tag" data-i18n="tag.1">Country · Mezcla / Mastering</span></div>
+        <div class="player">
+          <button class="play-btn" aria-label="Reproducir" data-i18n-aria="aria.play">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4Z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          </button>
+          <div class="player-bar">
+            <div class="progress-track"><div class="progress-fill"></div></div>
+            <div class="time-row"><span class="cur">0:00</span><span class="dur">0:00</span></div>
+          </div>
+          <div class="volume">
+            <button class="vol-btn" aria-label="Silenciar" data-i18n-aria="aria.mute">
+              <svg class="icon-vol" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a9 9 0 0 1 0 12"/></svg>
+              <svg class="icon-muted" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9l5 6M21 9l-5 6"/></svg>
+            </button>
+            <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1" aria-label="Volumen" data-i18n-aria="aria.volume">
+          </div>
+          <audio preload="metadata">
+            <source src="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/06/Nuevo-mix-4-portfolio.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <span class="track-num">02</span>
+      <div>
+        <div class="track-title"><h3>The Illus!ons</h3><span class="tag" data-i18n="tag.2">Alt. Rock / Pop-punk · Grabación / Mezcla / Mastering</span></div>
+        <div class="player">
+          <button class="play-btn" aria-label="Reproducir" data-i18n-aria="aria.play">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4Z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          </button>
+          <div class="player-bar">
+            <div class="progress-track"><div class="progress-fill"></div></div>
+            <div class="time-row"><span class="cur">0:00</span><span class="dur">0:00</span></div>
+          </div>
+          <div class="volume">
+            <button class="vol-btn" aria-label="Silenciar" data-i18n-aria="aria.mute">
+              <svg class="icon-vol" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a9 9 0 0 1 0 12"/></svg>
+              <svg class="icon-muted" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9l5 6M21 9l-5 6"/></svg>
+            </button>
+            <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1" aria-label="Volumen" data-i18n-aria="aria.volume">
+          </div>
+          <audio preload="metadata">
+            <source src="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/SINGLE2-FINAL-MASTER.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <span class="track-num">03</span>
+      <div>
+        <div class="track-title"><h3>Uckaia</h3><span class="tag" data-i18n="tag.3">Melodic Hardcore · Grabación / Mezcla / Mastering</span></div>
+        <div class="player">
+          <button class="play-btn" aria-label="Reproducir" data-i18n-aria="aria.play">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4Z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          </button>
+          <div class="player-bar">
+            <div class="progress-track"><div class="progress-fill"></div></div>
+            <div class="time-row"><span class="cur">0:00</span><span class="dur">0:00</span></div>
+          </div>
+          <div class="volume">
+            <button class="vol-btn" aria-label="Silenciar" data-i18n-aria="aria.mute">
+              <svg class="icon-vol" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a9 9 0 0 1 0 12"/></svg>
+              <svg class="icon-muted" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9l5 6M21 9l-5 6"/></svg>
+            </button>
+            <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1" aria-label="Volumen" data-i18n-aria="aria.volume">
+          </div>
+          <audio preload="metadata">
+            <source src="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/06/Prayed-by-the-lust-mp3.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </div>
+
+    <div class="track">
+      <span class="track-num">04</span>
+      <div>
+        <div class="track-title"><h3>Fearth</h3><span class="tag" data-i18n="tag.4">Hardcore / Beatdown · Grabación / Mezcla / Mastering</span></div>
+        <div class="player">
+          <button class="play-btn" aria-label="Reproducir" data-i18n-aria="aria.play">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4Z"/></svg>
+            <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          </button>
+          <div class="player-bar">
+            <div class="progress-track"><div class="progress-fill"></div></div>
+            <div class="time-row"><span class="cur">0:00</span><span class="dur">0:00</span></div>
+          </div>
+          <div class="volume">
+            <button class="vol-btn" aria-label="Silenciar" data-i18n-aria="aria.mute">
+              <svg class="icon-vol" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a9 9 0 0 1 0 12"/></svg>
+              <svg class="icon-muted" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9l5 6M21 9l-5 6"/></svg>
+            </button>
+            <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1" aria-label="Volumen" data-i18n-aria="aria.volume">
+          </div>
+          <audio preload="metadata">
+            <source src="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/06/FEARTH-Inner-Pain-mp3.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="wrap">
+    <blockquote data-i18n-html="testimonial2.quote">“Siempre que decido grabar con Lalo, sé que las cosas fluirán como lo esperado. Las sesiones de grabación son tranquilas y amigables y siempre consigue el sonido que quiero para mi proyecto. En relación calidad precio es de lo mejor que hay: recomendado si quieres una calidad de estudio profesional a un precio asequible y razonable.”</blockquote>
+    <cite>— Sepulchral</cite>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="cta.eyebrow">¡Reserva tu sesión!</p>
+    <h2 data-i18n="cta.title">¿Tienes fecha de lanzamiento?</h2>
+    <p data-i18n="cta.desc">Si ya tienes fechas programadas, comunícamelo cuanto antes para reservar tu sesión y no quedarte sin ella.</p>
+    <a href="#contacto" class="btn solid" data-i18n="cta.button">Reservar ahora</a>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap contact-grid">
+    <div class="contact-side">
+      <p class="eyebrow" data-i18n="contact.eyebrow">Contacto</p>
+      <h2 data-i18n="contact.title">Pide tu presupuesto</h2>
+      <p data-i18n="contact.desc">Cuéntame cuántos temas quieres grabar, qué género tocáis y con qué presupuesto contáis. Te respondo con una propuesta ajustada a tu proyecto.</p>
+      <div class="direct-contact">
+        <a class="icon-link" href="https://www.facebook.com/LaloFernandez.Producer/" aria-label="Facebook" data-i18n-aria="aria.facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M15 8h2V4h-2a4 4 0 0 0-4 4v2H9v4h2v8h4v-8h3l1-4h-4V8a1 1 0 0 1 1-1Z"/></svg>
+        </a>
+        <a class="icon-link" href="http://instagram.com/marrrbasdmg/" aria-label="Instagram" data-i18n-aria="aria.instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.2" cy="7.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xnjkearv" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Nuevo contacto desde lalofernandezproducer.com">
+        <input type="hidden" name="_replyto" id="f-replyto" value="">
+        <div class="field-row">
+          <div class="field">
+            <label for="f-nombre" data-i18n="form.name">Nombre</label>
+            <input type="text" id="f-nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-telefono"><span data-i18n="form.phone">Teléfono</span> <span class="opt" data-i18n="form.optional">(opcional)</span></label>
+            <input type="tel" id="f-telefono" name="telefono" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-email" data-i18n="form.email">Email</label>
+          <input type="email" id="f-email" name="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label data-i18n="form.servicesLabel">Servicios requeridos</label>
+          <div class="checks">
+            <label><input type="checkbox" name="servicio" value="Grabación"> <span data-i18n="form.svcRecording">Grabación</span></label>
+            <label><input type="checkbox" name="servicio" value="Mezcla"> <span data-i18n="form.svcMixing">Mezcla</span></label>
+            <label><input type="checkbox" name="servicio" value="Mastering"> <span data-i18n="form.svcMastering">Mastering</span></label>
+            <label><input type="checkbox" name="servicio" value="Otros"> <span data-i18n="form.svcOther">Otros servicios</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-presupuesto" data-i18n="form.budget">Presupuesto aproximado (€)</label>
+          <input type="number" id="f-presupuesto" name="presupuesto" min="0" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="f-detalle" data-i18n="form.detail">Cuéntame un poco más en detalle</label>
+          <textarea id="f-detalle" name="detalle" rows="4" required></textarea>
+          <p class="field-hint" data-i18n="form.detailHint">Cuántos temas quieres grabar, qué género tocáis, plazos que manejas...</p>
+        </div>
+
+        <!-- honeypot: invisible to people, catches basic bots -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="f-website" data-i18n="form.honeypotLabel">No rellenar este campo</label>
+          <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="field captcha-field">
+          <label for="f-captcha"><span data-i18n="form.verification">Verificación:</span> <span id="captcha-question">¿cuánto es 3 + 4?</span></label>
+          <div class="captcha-row">
+            <input type="text" id="f-captcha" name="captcha" inputmode="numeric" autocomplete="off" required>
+            <button type="button" class="captcha-refresh" id="captcha-refresh" aria-label="Generar otra pregunta" data-i18n-aria="aria.captchaRefresh">↻</button>
+          </div>
+          <p class="field-hint field-error" id="captcha-error" hidden data-i18n="form.captchaError">Respuesta incorrecta, prueba otra vez.</p>
+        </div>
+
+        <button type="submit" class="submit-btn" data-i18n="form.submit">Enviar</button>
+        <p class="form-message" id="form-message" role="status" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a href="#top" class="brand">Lalo Fernández</a>
+    <p data-i18n="footer.text">© 2018 Lalo Fernández. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Subir arriba" data-i18n-aria="aria.scrollTop">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+  /* ============ i18n ============ */
+  var i18n = {
+    es: {
+      'nav.about':'Sobre mí','nav.services':'Servicios','nav.work':'Trabajos','nav.contact':'Contacto','nav.cta':'Pide presupuesto',
+      'hero.eyebrow':'Grabación · Mezcla · Mastering',
+      'hero.role':'Productor musical · Ingeniero de mezcla y mastering',
+      'hero.title':'Que tu tema suene<br><em>a disco terminado</em>, no a maqueta.',
+      'hero.lede':'Grabo, mezclo y masterizo música de cualquier género — del acústico al hardcore — con trato cercano y precios pensados para bandas, no para sellos discográficos.',
+      'hero.cta1':'Pide tu presupuesto','hero.cta2':'Escucha mi trabajo',
+      'about.eyebrow':'Acerca de Lalo',
+      'about.title':'De vocalista a productor, con los pies en el estudio',
+      'about.p1':'Empecé como vocalista, guitarrista y bajista, y ese camino me llevó a la producción: ahí es donde encontré mi sitio. Desde entonces he estado involucrado en multitud de proyectos que han ido forjando mi experiencia profesional.',
+      'about.p2':'He producido, grabado, mezclado y masterizado música de todo tipo de géneros — desde acústicos y pop/rock, pasando por rap, hasta mi clientela habitual de metal y hardcore. Sea cual sea tu estilo, sé escuchar lo que estás buscando.',
+      'process.eyebrow':'Cómo trabajamos',
+      'process.title':'De tus pistas al lanzamiento, en tres pasos',
+      'process.1.title':'Cuéntame tu proyecto',
+      'process.1.desc':'Me mandas tu maqueta o tus pistas y hablamos de género, referencias y plazos. Sin compromiso.',
+      'process.2.title':'Trabajamos el sonido',
+      'process.2.desc':'Grabo, mezclo o masterizo con rondas de revisión hasta que el resultado suene exactamente como quieres.',
+      'process.3.title':'Listo para publicar',
+      'process.3.desc':'Recibes tu master final, coherente y a punto para Spotify, iTunes y cualquier plataforma de streaming.',
+      'services.eyebrow':'Servicios','services.title':'Todo lo que tu tema necesita',
+      'service.rec.title':'Grabación','service.rec.desc':'La parte más importante del proceso. Grabo tus mejores tomas con la máxima calidad y el mejor equipo.',
+      'service.mix.title':'Mezcla','service.mix.desc':'Convierto tus pistas crudas, grabadas en cualquier estudio, en algo profesional y pulido.',
+      'service.master.title':'Mastering','service.master.desc':'Un master final coherente que suena bien en todos los sistemas de escucha y servicios de streaming.',
+      'service.other.title':'Otros servicios','service.other.desc':'Reamping, edición de instrumentos y de voz — incluyendo pitch tuning — y lo que tu tema necesite.',
+      'testimonial1.quote':'“En la grabación con Lalo estuvimos muy cómodos, desde el primer momento demostró profesionalidad. También hubo momentos de risas, eso nos hizo sentirnos mucho más cómodos. Buena puntualidad con los adelantos semanales, consiguió un sonido profesional. La relación calidad precio insuperable.”',
+      'testimonial2.quote':'“Siempre que decido grabar con Lalo, sé que las cosas fluirán como lo esperado. Las sesiones de grabación son tranquilas y amigables y siempre consigue el sonido que quiero para mi proyecto. En relación calidad precio es de lo mejor que hay: recomendado si quieres una calidad de estudio profesional a un precio asequible y razonable.”',
+      'trabajos.eyebrow':'Mis trabajos','trabajos.title':'Del country al hardcore, grabado y mezclado a medida',
+      'tag.1':'Country · Mezcla / Mastering',
+      'tag.2':'Alt. Rock / Pop-punk · Grabación / Mezcla / Mastering',
+      'tag.3':'Melodic Hardcore · Grabación / Mezcla / Mastering',
+      'tag.4':'Hardcore / Beatdown · Grabación / Mezcla / Mastering',
+      'cta.eyebrow':'¡Reserva tu sesión!','cta.title':'¿Tienes fecha de lanzamiento?',
+      'cta.desc':'Si ya tienes fechas programadas, comunícamelo cuanto antes para reservar tu sesión y no quedarte sin ella.',
+      'cta.button':'Reservar ahora',
+      'contact.eyebrow':'Contacto','contact.title':'Pide tu presupuesto',
+      'contact.desc':'Cuéntame cuántos temas quieres grabar, qué género tocáis y con qué presupuesto contáis. Te respondo con una propuesta ajustada a tu proyecto.',
+      'form.name':'Nombre','form.phone':'Teléfono','form.optional':'(opcional)','form.email':'Email',
+      'form.servicesLabel':'Servicios requeridos','form.svcRecording':'Grabación','form.svcMixing':'Mezcla','form.svcMastering':'Mastering','form.svcOther':'Otros servicios',
+      'form.budget':'Presupuesto aproximado (€)','form.detail':'Cuéntame un poco más en detalle',
+      'form.detailHint':'Cuántos temas quieres grabar, qué género tocáis, plazos que manejas...',
+      'form.honeypotLabel':'No rellenar este campo','form.verification':'Verificación:',
+      'form.captchaError':'Respuesta incorrecta, prueba otra vez.','form.submit':'Enviar',
+      'form.successMsg':'¡Gracias! He recibido tu mensaje y te responderé lo antes posible.',
+      'form.errorMsg':'No se ha podido enviar el mensaje. Escríbeme directamente a lalofernandezproducer@gmail.com.',
+      'form.sending':'Enviando…',
+      'form.captchaQ':'¿cuánto es {a} + {b}?',
+      'aria.openMenu':'Abrir menú','aria.closeMenu':'Cerrar menú','aria.play':'Reproducir','aria.mute':'Silenciar',
+      'aria.volume':'Volumen','aria.captchaRefresh':'Generar otra pregunta','aria.scrollTop':'Subir arriba',
+      'aria.facebook':'Facebook','aria.instagram':'Instagram',
+      'footer.text':'© 2018 Lalo Fernández. Todos los derechos reservados.',
+      'doc.title':'Lalo Fernández — Producción musical, mezcla y mastering'
+    },
+    en: {
+      'nav.about':'About','nav.services':'Services','nav.work':'Work','nav.contact':'Contact','nav.cta':'Get a quote',
+      'hero.eyebrow':'Recording · Mixing · Mastering',
+      'hero.role':'Music Producer · Mixing &amp; Mastering Engineer',
+      'hero.title':'Make your track sound<br><em>like a finished record</em>, not a demo.',
+      'hero.lede':'I record, mix and master music in any genre — from acoustic to hardcore — with a personal touch and prices built for bands, not record labels.',
+      'hero.cta1':'Get your quote','hero.cta2':'Listen to my work',
+      'about.eyebrow':'About Lalo',
+      'about.title':'From vocalist to producer, rooted in the studio',
+      'about.p1':'I started out as a vocalist, guitarist and bassist, and that path led me to production — that\'s where I found my place. Since then I\'ve been involved in countless projects that have shaped my professional experience.',
+      'about.p2':'I\'ve produced, recorded, mixed and mastered music across all kinds of genres — from acoustic and pop/rock, through rap, to my regular clientele in metal and hardcore. Whatever your style, I know how to listen to what you\'re looking for.',
+      'process.eyebrow':'How we work',
+      'process.title':'From your tracks to release, in three steps',
+      'process.1.title':'Tell me about your project',
+      'process.1.desc':'Send me your demo or tracks and we\'ll talk genre, references and deadlines. No strings attached.',
+      'process.2.title':'We work on the sound',
+      'process.2.desc':'I record, mix or master with rounds of revisions until the result sounds exactly the way you want.',
+      'process.3.title':'Ready to release',
+      'process.3.desc':'You get your final master, consistent and ready for Spotify, iTunes and any streaming platform.',
+      'services.eyebrow':'Services','services.title':'Everything your track needs',
+      'service.rec.title':'Recording','service.rec.desc':'The most important part of the process. I record your best takes with top quality and the right gear.',
+      'service.mix.title':'Mixing','service.mix.desc':'I turn your raw tracks, recorded anywhere, into something professional and polished.',
+      'service.master.title':'Mastering','service.master.desc':'A consistent final master that sounds great on every playback system and streaming service.',
+      'service.other.title':'Other services','service.other.desc':'Reamping, instrument and vocal editing — including pitch tuning — and whatever your track needs.',
+      'testimonial1.quote':'“Recording with Lalo, we felt right at home from the very first moment — he showed real professionalism. There were also plenty of laughs, which made us feel even more comfortable. Great punctuality with the weekly progress, and he got a professional sound. Unbeatable value for money.”',
+      'testimonial2.quote':'“Whenever I decide to record with Lalo, I know things will go the way I expect. The sessions are calm and friendly, and he always nails the sound I want for my project. Value for money is some of the best there is — recommended if you want professional studio quality at an affordable, reasonable price.”',
+      'trabajos.eyebrow':'My work','trabajos.title':'From country to hardcore, recorded and mixed to fit',
+      'tag.1':'Country · Mixing / Mastering',
+      'tag.2':'Alt. Rock / Pop-punk · Recording / Mixing / Mastering',
+      'tag.3':'Melodic Hardcore · Recording / Mixing / Mastering',
+      'tag.4':'Hardcore / Beatdown · Recording / Mixing / Mastering',
+      'cta.eyebrow':'Book your session!','cta.title':'Got a release date coming up?',
+      'cta.desc':'If you already have dates scheduled, let me know as soon as possible to book your session and not miss out.',
+      'cta.button':'Book now',
+      'contact.eyebrow':'Contact','contact.title':'Get your quote',
+      'contact.desc':'Tell me how many tracks you want to record, what genre you play and what budget you\'re working with. I\'ll get back to you with a proposal tailored to your project.',
+      'form.name':'Name','form.phone':'Phone','form.optional':'(optional)','form.email':'Email',
+      'form.servicesLabel':'Services needed','form.svcRecording':'Recording','form.svcMixing':'Mixing','form.svcMastering':'Mastering','form.svcOther':'Other services',
+      'form.budget':'Approximate budget (€)','form.detail':'Tell me a bit more',
+      'form.detailHint':'How many tracks you want to record, what genre you play, your timeline...',
+      'form.honeypotLabel':'Please leave this field blank','form.verification':'Verification:',
+      'form.captchaError':'Incorrect answer, try again.','form.submit':'Send',
+      'form.successMsg':'Thanks! I\'ve received your message and will get back to you as soon as possible.',
+      'form.errorMsg':'The message could not be sent. Please email me directly at lalofernandezproducer@gmail.com.',
+      'form.sending':'Sending…',
+      'form.captchaQ':'what is {a} + {b}?',
+      'aria.openMenu':'Open menu','aria.closeMenu':'Close menu','aria.play':'Play','aria.mute':'Mute',
+      'aria.volume':'Volume','aria.captchaRefresh':'Generate another question','aria.scrollTop':'Back to top',
+      'aria.facebook':'Facebook','aria.instagram':'Instagram',
+      'footer.text':'© 2018 Lalo Fernández. All rights reserved.',
+      'doc.title':'Lalo Fernández — Music Production, Mixing &amp; Mastering'
+    }
+  };
+  var currentLang = 'es';
+
+  function applyLanguage(lang){
+    currentLang = lang;
+    var dict = i18n[lang];
+    document.documentElement.lang = (lang === 'es' ? 'es-ES' : 'en');
+    document.title = dict['doc.title'].replace('&amp;','&');
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-html');
+      if(dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-aria');
+      if(dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
+    });
+
+    // menu toggle aria-label depends on open/closed state too
+    toggle.setAttribute('aria-label', links.classList.contains('open') ? dict['aria.closeMenu'] : dict['aria.openMenu']);
+
+    document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+
+    newCaptcha();
+  }
+
+  document.getElementById('lang-es').addEventListener('click', function(){ applyLanguage('es'); });
+  document.getElementById('lang-en').addEventListener('click', function(){ applyLanguage('en'); });
+
+  /* ============ nav ============ */
+  var toggle = document.getElementById('nav-toggle');
+  var closeBtn = document.getElementById('nav-close');
+  var links = document.getElementById('main-links');
+
+  function openMenu(){
+    links.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    toggle.setAttribute('aria-label', i18n[currentLang]['aria.closeMenu']);
+    document.body.classList.add('nav-open');
+  }
+  function closeMenu(){
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label', i18n[currentLang]['aria.openMenu']);
+    document.body.classList.remove('nav-open');
+  }
+  toggle.addEventListener('click', function(){
+    links.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  closeBtn.addEventListener('click', closeMenu);
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+
+  /* ============ back to top ============ */
+  var backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function(){
+    backToTop.classList.toggle('visible', window.scrollY > 500);
+  });
+  backToTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  function formatTime(s){
+    if(!isFinite(s)) return '0:00';
+    var m = Math.floor(s/60), sec = Math.floor(s%60);
+    return m + ':' + (sec<10?'0':'') + sec;
+  }
+
+  var players = document.querySelectorAll('.player');
+  players.forEach(function(el){
+    var audio = el.querySelector('audio');
+    var btn = el.querySelector('.play-btn');
+    var fill = el.querySelector('.progress-fill');
+    var track = el.querySelector('.progress-track');
+    var cur = el.querySelector('.cur');
+    var dur = el.querySelector('.dur');
+    var volBtn = el.querySelector('.vol-btn');
+    var volSlider = el.querySelector('.vol-slider');
+
+    audio.volume = 1;
+
+    audio.addEventListener('loadedmetadata', function(){
+      dur.textContent = formatTime(audio.duration);
+    });
+    audio.addEventListener('timeupdate', function(){
+      cur.textContent = formatTime(audio.currentTime);
+      if(audio.duration){
+        fill.style.width = (audio.currentTime/audio.duration*100) + '%';
+      }
+    });
+    audio.addEventListener('ended', function(){
+      el.classList.remove('is-playing');
+      fill.style.width = '0%';
+    });
+
+    btn.addEventListener('click', function(){
+      if(audio.paused){
+        players.forEach(function(other){
+          if(other !== el){
+            var oAudio = other.querySelector('audio');
+            oAudio.pause();
+            other.classList.remove('is-playing');
+          }
+        });
+        audio.play();
+        el.classList.add('is-playing');
+      } else {
+        audio.pause();
+        el.classList.remove('is-playing');
+      }
+    });
+
+    track.addEventListener('click', function(e){
+      var rect = track.getBoundingClientRect();
+      var ratio = (e.clientX - rect.left) / rect.width;
+      if(audio.duration){
+        audio.currentTime = ratio * audio.duration;
+      }
+    });
+
+    volSlider.addEventListener('input', function(){
+      audio.volume = volSlider.value;
+      audio.muted = false;
+      el.classList.toggle('is-muted', parseFloat(volSlider.value) === 0);
+    });
+    volBtn.addEventListener('click', function(){
+      audio.muted = !audio.muted;
+      el.classList.toggle('is-muted', audio.muted);
+      if(!audio.muted && parseFloat(volSlider.value) === 0){
+        volSlider.value = 1;
+        audio.volume = 1;
+      }
+    });
+  });
+
+  /* ---- contact form: honeypot + math captcha ---- */
+  var form = document.getElementById('contact-form');
+  var captchaQuestion = document.getElementById('captcha-question');
+  var captchaInput = document.getElementById('f-captcha');
+  var captchaError = document.getElementById('captcha-error');
+  var captchaRefresh = document.getElementById('captcha-refresh');
+  var formMessage = document.getElementById('form-message');
+  var submitBtn = form.querySelector('.submit-btn');
+  var captchaAnswer = 0;
+
+  function newCaptcha(){
+    var a = 1 + Math.floor(Math.random()*9);
+    var b = 1 + Math.floor(Math.random()*9);
+    captchaAnswer = a + b;
+    captchaQuestion.textContent = i18n[currentLang]['form.captchaQ'].replace('{a}', a).replace('{b}', b);
+    captchaInput.value = '';
+    captchaError.hidden = true;
+  }
+  captchaRefresh.addEventListener('click', newCaptcha);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    formMessage.hidden = true;
+
+    // honeypot: if this hidden field got filled, silently pretend success (spam)
+    var honeypot = document.getElementById('f-website').value;
+    if(honeypot){
+      formMessage.textContent = i18n[currentLang]['form.successMsg'];
+      formMessage.className = 'form-message success';
+      formMessage.hidden = false;
+      form.reset();
+      return;
+    }
+
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+
+    if(parseInt(captchaInput.value, 10) !== captchaAnswer){
+      captchaError.hidden = false;
+      newCaptcha();
+      return;
+    }
+
+    // keep reply-to in sync with the email field the visitor typed
+    document.getElementById('f-replyto').value = document.getElementById('f-email').value;
+
+    var data = new FormData(form);
+    data.delete('website');  // never send the honeypot value
+    data.delete('captcha');  // internal check only, not needed in the email
+
+    submitBtn.disabled = true;
+    var originalLabel = submitBtn.textContent;
+    submitBtn.textContent = i18n[currentLang]['form.sending'];
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if(response.ok){
+        formMessage.textContent = i18n[currentLang]['form.successMsg'];
+        formMessage.className = 'form-message success';
+        form.reset();
+      } else {
+        formMessage.textContent = i18n[currentLang]['form.errorMsg'];
+        formMessage.className = 'form-message error';
+      }
+      formMessage.hidden = false;
+      newCaptcha();
+    }).catch(function(){
+      formMessage.textContent = i18n[currentLang]['form.errorMsg'];
+      formMessage.className = 'form-message error';
+      formMessage.hidden = false;
+      newCaptcha();
+    }).finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    });
+  });
+
+  applyLanguage('es');
+</script>
+</body>
+</html>
