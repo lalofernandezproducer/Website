@@ -145,8 +145,7 @@
   /* ---------- nav ---------- */
   header.site-nav{
     position:sticky; top:0; z-index:50;
-    background:rgba(24,20,16,.92);
-    backdrop-filter:blur(6px);
+    background:rgba(24,20,16,.97);
     border-bottom:1px solid var(--line);
   }
   .nav-inner{
@@ -158,6 +157,7 @@
     text-transform:uppercase; letter-spacing:.06em; text-decoration:none;
   }
   .brand span{color:var(--amber);}
+  .brand-producer{color:var(--text) !important; font-size:calc(1em - 1px); margin-left:-2px;}
   nav.main-links{display:flex; gap:32px; align-items:center;}
   nav.main-links a{
     font-family:var(--mono); font-size:.82rem; text-transform:uppercase;
@@ -240,6 +240,7 @@
 
   /* ---------- about ---------- */
   .about{background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .gallery{background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .about-grid{display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:center;}
   .about-photo{
     border:1px solid var(--line-strong); border-radius:50%; overflow:hidden;
@@ -286,16 +287,24 @@
 
   /* ---------- instagram gallery ---------- */
   .insta-grid{
-    display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;
-    align-items:start;
+    columns:4 260px; column-gap:24px;
+    max-width:1080px; margin:0 auto;
   }
-  .insta-grid iframe{width:100% !important; max-width:100% !important;}
+  .insta-grid > *{
+    break-inside:avoid; -webkit-column-break-inside:avoid;
+    display:block; margin:0 0 24px; width:100%;
+  }
+  .insta-caption{
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--amber); margin:0 0 10px; text-align:center;
+  }
+  .insta-grid iframe{width:100% !important; max-width:100% !important; margin:0 !important;}
   .insta-more{text-align:center; margin-top:40px;}
   @media (max-width:880px){
-    .insta-grid{grid-template-columns:repeat(2, 1fr);}
+    .insta-grid{columns:2 220px;}
   }
   @media (max-width:640px){
-    .insta-grid{grid-template-columns:1fr; max-width:340px; margin:0 auto;}
+    .insta-grid{columns:1; max-width:340px;}
   }
   .track-num{font-family:var(--mono); color:var(--amber); font-size:1.1rem;}
   .track-title{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:12px;}
@@ -386,6 +395,36 @@
 
   .hp-field{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;}
 
+  /* ---------- under-construction popup ---------- */
+  .site-modal-overlay{
+    position:fixed; inset:0; z-index:200;
+    background:rgba(24,20,16,.72);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    display:flex; align-items:center; justify-content:center; padding:24px;
+    opacity:1; visibility:visible;
+    transition:opacity .2s ease, visibility 0s linear 0s;
+  }
+  .site-modal-overlay.hidden{
+    opacity:0; visibility:hidden;
+    transition:opacity .2s ease, visibility 0s linear .2s;
+  }
+  .site-modal{
+    position:relative; max-width:420px; width:100%;
+    background:var(--bg-panel); border:1px solid var(--amber);
+    padding:40px 32px; text-align:center;
+  }
+  .site-modal p{
+    font-family:var(--serif); font-style:italic; font-size:1.1rem;
+    color:var(--text); margin:0;
+  }
+  .site-modal-close{
+    position:absolute; top:12px; right:12px;
+    width:32px; height:32px; background:none; border:1px solid var(--line-strong);
+    color:var(--text-muted); cursor:pointer; transition:border-color .15s, color .15s;
+  }
+  .site-modal-close:hover{border-color:var(--amber); color:var(--amber);}
+  body.modal-open{overflow:hidden;}
+
   .captcha-row{display:flex; gap:10px;}
   .captcha-row input{flex:1;}
   .captcha-refresh{
@@ -409,7 +448,7 @@
 
   footer.site-footer{padding:40px 0; border-top:1px solid var(--line);}
   .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
-  .footer-inner .brand{font-size:.95rem;}
+  .footer-inner .brand{font-size:calc(.95rem + 1px);}
   .footer-inner p{margin:0; color:var(--text-muted); font-size:.85rem;}
 
   .sticky-cta{
@@ -427,8 +466,8 @@
   @media (max-width:640px){
     nav.main-links{
       position:fixed; inset:0; z-index:80;
-      background:rgba(24,20,16,.88);
-      backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+      background:rgba(24,20,16,.96);
+      backdrop-filter:blur(28px) saturate(120%); -webkit-backdrop-filter:blur(28px) saturate(120%);
       flex-direction:column; padding:110px 28px 32px; gap:24px; align-items:flex-start;
       transform:translateX(100%); visibility:hidden;
       transition:transform .25s ease, visibility 0s linear .25s;
@@ -453,6 +492,13 @@
 </head>
 <body>
 
+<div class="site-modal-overlay" id="site-modal-overlay">
+  <div class="site-modal" role="dialog" aria-modal="true" aria-labelledby="site-modal-text">
+    <button class="site-modal-close" id="site-modal-close" aria-label="Close">✕</button>
+    <p id="site-modal-text">This website is under construction. If you come across any bugs, thank you for your understanding.</p>
+  </div>
+</div>
+
 <header class="site-nav">
   <div class="nav-inner wrap">
     <a href="#top" class="brand">Lalo <span>Fernández</span></a>
@@ -461,7 +507,7 @@
       <a href="#acerca">About</a>
       <a href="#servicios">Services</a>
       <a href="#trabajos">Work</a>
-      <a href="#galeria">Instagram</a>
+      <a href="#galeria">Portfolio</a>
       <a href="#contacto">Contact</a>
     </nav>
     <a href="#contacto" class="btn solid">Get a quote</a>
@@ -702,18 +748,30 @@
   </div>
 </section>
 
-<section id="galeria">
+<section id="galeria" class="gallery">
   <div class="wrap">
     <div class="section-head center">
       <p class="eyebrow">Instagram</p>
-      <h2>Behind the mixes</h2>
+      <h2>Portfolio</h2>
     </div>
     <div class="insta-grid">
       <!-- Each block is a public Instagram post (photo or video), embedded with Instagram's official embed system. -->
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BwaBwcAHOpz/" data-instgrm-version="14"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFO4noKd4k/" data-instgrm-version="14"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFPpGvKxCy/" data-instgrm-version="14"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFQSEXq9OI/" data-instgrm-version="14"></blockquote>
+      <div class="insta-item">
+        <p class="insta-caption">Jam session</p>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BwaBwcAHOpz/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="insta-item">
+        <p class="insta-caption">Albany</p>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFO4noKd4k/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="insta-item">
+        <p class="insta-caption">Beny Jr</p>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFPpGvKxCy/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="insta-item">
+        <p class="insta-caption">Beny Jr</p>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFQSEXq9OI/" data-instgrm-version="14"></blockquote>
+      </div>
     </div>
     <p class="insta-more"><a href="https://instagram.com/lfproducer" target="_blank" rel="noopener" class="btn">See more on Instagram</a></p>
   </div>
@@ -812,7 +870,7 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <a href="#top" class="brand">Lalo Fernández</a>
+    <a href="#top" class="brand">Lalo <span>Fernández</span> <span class="brand-producer">Producer</span></a>
     <p>© 2018 Lalo Fernández. All rights reserved. — Barcelona, Spain</p>
   </div>
 </footer>
@@ -823,6 +881,23 @@
 
 <script>
   /* ============ nav ============ */
+  /* ============ under-construction popup ============ */
+  var siteModalOverlay = document.getElementById('site-modal-overlay');
+  var siteModalClose = document.getElementById('site-modal-close');
+
+  function closeSiteModal(){
+    siteModalOverlay.classList.add('hidden');
+    document.body.classList.remove('modal-open');
+  }
+  siteModalClose.addEventListener('click', closeSiteModal);
+  siteModalOverlay.addEventListener('click', function(e){
+    if(e.target === siteModalOverlay) closeSiteModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeSiteModal();
+  });
+  document.body.classList.add('modal-open');
+
   var toggle = document.getElementById('nav-toggle');
   var closeBtn = document.getElementById('nav-close');
   var links = document.getElementById('main-links');
@@ -956,7 +1031,7 @@
 
     var honeypot = document.getElementById('f-website').value;
     if(honeypot){
-      formMessage.textContent = 'Thanks! I've received your message and will get back to you as soon as possible.';
+      formMessage.textContent = 'Thanks! I\'ve received your message and will get back to you as soon as possible.';
       formMessage.className = 'form-message success';
       formMessage.hidden = false;
       form.reset();
@@ -990,7 +1065,7 @@
       headers: { 'Accept': 'application/json' }
     }).then(function(response){
       if(response.ok){
-        formMessage.textContent = 'Thanks! I've received your message and will get back to you as soon as possible.';
+        formMessage.textContent = 'Thanks! I\'ve received your message and will get back to you as soon as possible.';
         formMessage.className = 'form-message success';
         form.reset();
       } else {
