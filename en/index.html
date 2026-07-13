@@ -37,7 +37,7 @@
   "name": "Lalo Fernández",
   "alternateName": "Lalo Fernández Producer",
   "jobTitle": "Music Producer",
-  "description": "Music producer, mixing and mastering engineer in Barcelona, for artists of any genre.",
+  "description": "Music producer, mixing and mastering engineer in Barcelona, for bands and artists of any genre.",
   "url": "https://lalofernandezproducer.github.io/Website/en/",
   "image": "http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png",
   "address": {
@@ -52,7 +52,7 @@
   },
   "sameAs": [
     "https://www.facebook.com/LaloFernandez.Producer/",
-    "http://instagram.com/lfproducer/"
+    "https://instagram.com/lfproducer"
   ],
   "knowsAbout": ["Audio recording", "Mixing", "Mastering", "Music production", "Reamping", "Audio editing"],
   "makesOffer": [
@@ -283,6 +283,20 @@
     padding:22px 0;
   }
   .track:last-child{border-bottom:1px solid var(--line);}
+
+  /* ---------- instagram gallery ---------- */
+  .insta-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;
+    align-items:start;
+  }
+  .insta-grid iframe{width:100% !important; max-width:100% !important;}
+  .insta-more{text-align:center; margin-top:40px;}
+  @media (max-width:880px){
+    .insta-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:640px){
+    .insta-grid{grid-template-columns:1fr; max-width:340px; margin:0 auto;}
+  }
   .track-num{font-family:var(--mono); color:var(--amber); font-size:1.1rem;}
   .track-title{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:12px;}
   .track-title h3{font-family:var(--serif); text-transform:none; font-weight:600; font-size:1.15rem;}
@@ -447,6 +461,7 @@
       <a href="#acerca">About</a>
       <a href="#servicios">Services</a>
       <a href="#trabajos">Work</a>
+      <a href="#galeria">Instagram</a>
       <a href="#contacto">Contact</a>
     </nav>
     <a href="#contacto" class="btn solid">Get a quote</a>
@@ -687,6 +702,24 @@
   </div>
 </section>
 
+<section id="galeria">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Instagram</p>
+      <h2>Behind the mixes</h2>
+    </div>
+    <div class="insta-grid">
+      <!-- Each block is a public Instagram post (photo or video), embedded with Instagram's official embed system. -->
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BwaBwcAHOpz/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFO4noKd4k/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFPpGvKxCy/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFQSEXq9OI/" data-instgrm-version="14"></blockquote>
+    </div>
+    <p class="insta-more"><a href="https://instagram.com/lfproducer" target="_blank" rel="noopener" class="btn">See more on Instagram</a></p>
+  </div>
+</section>
+<script async src="//www.instagram.com/embed.js"></script>
+
 <section class="testimonial">
   <div class="wrap">
     <blockquote>“Whenever I decide to record with Lalo, I know things will go the way I expect. The sessions are calm and friendly, and he always nails the sound I want for my project. Value for money is some of the best there is — recommended if you want professional studio quality at an affordable, reasonable price.”</blockquote>
@@ -713,7 +746,7 @@
         <a class="icon-link" href="https://www.facebook.com/LaloFernandez.Producer/" aria-label="Facebook" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M15 8h2V4h-2a4 4 0 0 0-4 4v2H9v4h2v8h4v-8h3l1-4h-4V8a1 1 0 0 1 1-1Z"/></svg>
         </a>
-        <a class="icon-link" href="http://instagram.com/marrrbasdmg/" aria-label="Instagram" target="_blank" rel="noopener">
+        <a class="icon-link" href="https://instagram.com/lfproducer" aria-label="Instagram" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.2" cy="7.8" r="0.6" fill="currentColor" stroke="none"/></svg>
         </a>
       </div>
