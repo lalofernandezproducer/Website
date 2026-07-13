@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://lalofernandezproducer.com/sitemap.xml
+Sitemap: https://lalofernandezproducer.github.io/Website/sitemap.xml
