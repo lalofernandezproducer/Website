@@ -87,7 +87,7 @@
     --mono: 'JetBrains Mono', monospace;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
   body{
     margin:0;
     background:var(--bg);
@@ -134,13 +134,6 @@
     0%,100%{transform:scaleY(.6);}
     50%{transform:scaleY(1);}
   }
-  .divider{
-    display:flex; justify-content:center; gap:5px; padding:0 0 0;
-    height:20px; overflow:hidden;
-  }
-  .divider span{width:3px; background:var(--line-strong); animation:meter-bounce 2.2s ease-in-out infinite;}
-  .divider span:nth-child(odd){animation-delay:.3s;}
-  .divider span:nth-child(3n){animation-delay:.6s;}
 
   /* ---------- nav ---------- */
   header.site-nav{
@@ -241,6 +234,7 @@
   /* ---------- about ---------- */
   .about{background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .gallery{background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .trabajos{background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .about-grid{display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:center;}
   .about-photo{
     border:1px solid var(--line-strong); border-radius:50%; overflow:hidden;
@@ -258,7 +252,7 @@
   .process-card p{color:var(--text-muted); margin:0; font-size:.96rem;}
 
   /* ---------- services ---------- */
-  .services{background:var(--bg-panel);}
+  .services{background:var(--bg-panel); border-bottom:1px solid var(--line);}
   .service-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
   .service-card{background:var(--bg-panel); padding:34px 28px;}
   .service-card svg{width:34px; height:34px; stroke:var(--amber); fill:none; stroke-width:1.5; margin-bottom:20px; transition:transform .25s ease;}
@@ -279,11 +273,11 @@
 
   /* ---------- portfolio ---------- */
   .track{
-    border-top:1px solid var(--line);
+    background:var(--bg); border:1px solid var(--line-strong); border-radius:10px;
     display:grid; grid-template-columns:48px 1fr; gap:20px; align-items:center;
-    padding:22px 0;
+    padding:22px 24px; margin-bottom:16px;
   }
-  .track:last-child{border-bottom:1px solid var(--line);}
+  .track:last-child{margin-bottom:0;}
 
   /* ---------- instagram gallery ---------- */
   .insta-grid{
@@ -299,6 +293,11 @@
     color:var(--amber); margin:0 0 10px; text-align:center;
   }
   .insta-grid iframe{width:100% !important; max-width:100% !important; margin:0 !important;}
+  .yt-embed{
+    position:relative; width:100%; aspect-ratio:16/9;
+    border:1px solid var(--line-strong); overflow:hidden; background:#000;
+  }
+  .yt-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
   .insta-more{text-align:center; margin-top:40px;}
   @media (max-width:880px){
     .insta-grid{columns:2 220px;}
@@ -451,10 +450,6 @@
   .footer-inner .brand{font-size:calc(.95rem + 1px);}
   .footer-inner p{margin:0; color:var(--text-muted); font-size:.85rem;}
 
-  .sticky-cta{
-    position:fixed; bottom:18px; right:18px; z-index:60;
-  }
-
   @media (max-width:880px){
     .about-grid{grid-template-columns:1fr; text-align:center;}
     .about-photo{max-width:220px; margin:0 auto;}
@@ -483,9 +478,11 @@
     .nav-inner .btn.solid{display:none;}
     body.nav-open{overflow:hidden;}
     .service-grid{grid-template-columns:1fr;}
-    .track{grid-template-columns:32px 1fr;}
+    .track{grid-template-columns:32px 1fr; padding:18px 16px;}
     .play-btn{width:40px; height:40px;}
     .vol-slider{width:44px;}
+    .lang-btn{width:34px; height:26px;}
+    .vol-btn{padding:8px;}
     .hero-inner{padding:90px 20px 70px;}
   }
 </style>
@@ -538,8 +535,8 @@
   <div class="hero-inner wrap">
     <p class="eyebrow">Grabación · Mezcla · Mastering</p>
     <p class="hero-role">Productor musical · Ingeniero de mezcla y mastering</p>
-    <h1>Que tu tema suene<br><em>a disco terminado</em>, no a maqueta.<br><em>a disco terminado</em>, no a maqueta.</h1>
-    <p class="lede">Grabo, mezclo y masterizo música de cualquier género — ¿Acústico? ¿Metal? ¿Urbano? amo toda música por igual — con trato cercano y precios pensados para bandas, no para sellos discográficos.</p>
+    <h1>Que tu tema suene<br><em>a disco terminado</em>, no a maqueta.</h1>
+    <p class="lede">Grabo, mezclo y masterizo música de cualquier género — del acústico al hardcore — con trato cercano y precios pensados para bandas, no para sellos discográficos.</p>
     <div class="hero-ctas">
       <a href="#contacto" class="btn solid">Pide tu presupuesto</a>
       <a href="#trabajos" class="btn">Escucha mi trabajo</a>
@@ -554,9 +551,9 @@
     </div>
     <div class="about-text">
       <p class="eyebrow">Acerca de Lalo</p>
-      <h2>De vocalista a productor, con los pies y el alma en el estudio</h2>
+      <h2>De vocalista a productor, con los pies en el estudio</h2>
       <p>Empecé como batería, guitarrista y bajista, luego como vocalista, y ese camino me llevó a la producción: ahí es donde encontré mi verdadero amor. Desde entonces he estado involucrado en multitud de proyectos que han ido forjando mi experiencia profesional.</p>
-      <p>He producido, grabado, mezclado y masterizado música de todo tipo de géneros — desde acústicos y pop/rock, pasando por urbano: reggaeton, trap y rap, hasta metal y hardcore. Sea cual sea tu estilo, sé escuchar y lograr lo que estás buscando en tu sonido.</p>
+      <p>En mis 11 años de experiencia he trabajado de técnico de directo, producido, grabado, mezclado y masterizado música de todo tipo de géneros — desde acústicos y pop/rock, pasando por urbano: reggaeton, trap y rap, hasta metal y hardcore. Sea cual sea tu estilo, sé entender tu punto de vista y lograr una versión mejorada de lo que estás buscando.</p>
       <p>Trabajo en Barcelona, en pleno centro, a solo 10 minutos en coche de la Sagrada Familia. Donde realizo grabaciones vocales y sesiones de mezcla y mastering presenciales a parte de mis servicios online.</p>
     </div>
   </div>
@@ -572,17 +569,17 @@
       <div class="process-card">
         <span class="num">01</span>
         <h3>Cuéntame tu proyecto</h3>
-        <p>Me mandas tu maqueta o tus pistas con referencias y hablamos del sonido, lo que creo que yo puedo aportar al proyecto y plazos. Sin compromiso.</p>
+        <p>Me mandas tu maqueta o tus pistas y hablamos de género, referencias y plazos. Sin compromiso.</p>
       </div>
       <div class="process-card">
         <span class="num">02</span>
         <h3>Trabajamos el sonido</h3>
-        <p>Grabo, mezclo o masterizo con rondas de revisión hasta que el resultado suene exactamente como estaba planeado.</p>
+        <p>Grabo, mezclo o masterizo con rondas de revisión hasta que el resultado suene exactamente como quieres.</p>
       </div>
       <div class="process-card">
         <span class="num">03</span>
         <h3>Listo para publicar</h3>
-        <p>Recibes tu master final, coherente en cualquier escucha y a punto para Spotify, iTunes y cualquier plataforma de streaming.</p>
+        <p>Recibes tu master final, coherente y a punto para Spotify, iTunes y cualquier plataforma de streaming.</p>
       </div>
     </div>
   </div>
@@ -610,8 +607,7 @@
       <div class="service-card">
         <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 8-8"/><path d="M4 12a8 8 0 0 0 8 8"/><path d="M12 4a8 8 0 0 1 8 8"/><path d="M12 20a8 8 0 0 0 8-8"/><circle cx="12" cy="12" r="2"/></svg>
         <h3>Mastering</h3>
-        <p>Un master final coherente que suena bien en todos los sistemas de escucha y servicios de streaming. Stem mastering disponible, 
-           en caso de que te guste el sonido de tu productor, pero no ha sido mezclado por un ingeniero, puedo pulir tu sonido respetando las decisiones del productor para que tu track suene como merece.</p>
+        <p>Un master final coherente que suena bien en todos los sistemas de escucha y servicios de streaming.</p>
       </div>
       <div class="service-card">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1Z"/></svg>
@@ -624,15 +620,12 @@
 
 <section class="testimonial">
   <div class="wrap">
-    <div class="divider" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-  </div>
-  <div class="wrap" style="margin-top:36px;">
     <blockquote>“En la grabación con Lalo estuvimos muy cómodos, desde el primer momento demostró profesionalidad. También hubo momentos de risas, eso nos hizo sentirnos mucho más cómodos. Buena puntualidad con los adelantos semanales, consiguió un sonido profesional. La relación calidad precio insuperable.”</blockquote>
     <cite>— Minerva</cite>
   </div>
 </section>
 
-<section id="trabajos">
+<section id="trabajos" class="trabajos">
   <div class="wrap">
     <div class="section-head center">
       <p class="eyebrow">Mis trabajos</p>
@@ -764,6 +757,11 @@
       <div class="insta-item">
         <p class="insta-caption">Albany</p>
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFO4noKd4k/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="insta-item">
+        <div class="yt-embed">
+          <iframe src="https://www.youtube.com/embed/2RIst91TbiE" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
       </div>
       <div class="insta-item">
         <p class="insta-caption">Beny Jr</p>
