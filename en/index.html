@@ -18,17 +18,17 @@
 <meta property="og:url" content="https://lalofernandezproducer.github.io/Website/en/">
 <meta property="og:title" content="Lalo Fernández | Music Producer in Barcelona — Recording, Mixing &amp; Mastering">
 <meta property="og:description" content="Recording, mixing and mastering studio in central Barcelona. For bands and artists of any genre. Get your quote.">
-<meta property="og:image" content="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png">
+<meta property="og:image" content="https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_ES">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lalo Fernández | Music Producer in Barcelona — Recording, Mixing &amp; Mastering">
 <meta name="twitter:description" content="Recording, mixing and mastering studio in central Barcelona. Get your quote.">
-<meta name="twitter:image" content="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png">
+<meta name="twitter:image" content="https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png">
 
-<link rel="icon" href="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-lalo-fav-32x32.jpg" sizes="32x32">
-<link rel="apple-touch-icon" href="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-lalo-fav-180x180.jpg">
+<link rel="icon" href="https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-lalo-fav-32x32.jpg" sizes="32x32">
+<link rel="apple-touch-icon" href="https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-lalo-fav-180x180.jpg">
 
 <script type="application/ld+json">
 {
@@ -39,7 +39,7 @@
   "jobTitle": "Music Producer",
   "description": "Music producer, mixing and mastering engineer in Barcelona, for bands and artists of any genre.",
   "url": "https://lalofernandezproducer.github.io/Website/en/",
-  "image": "http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png",
+  "image": "https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Barcelona",
@@ -67,7 +67,7 @@
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://web.archive.org">
-<link rel="preload" as="image" href="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-IMG_8917.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-IMG_8917.jpg" fetchpriority="high">
 <meta name="theme-color" content="#181410">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -281,29 +281,33 @@
 
   /* ---------- instagram gallery ---------- */
   .insta-grid{
-    columns:4 260px; column-gap:24px;
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
     max-width:1080px; margin:0 auto;
   }
-  .insta-grid > *{
-    break-inside:avoid; -webkit-column-break-inside:avoid;
-    display:block; margin:0 0 24px; width:100%;
+  .insta-item{
+    background:var(--bg); border:1px solid var(--line-strong); border-radius:10px;
+    overflow:hidden; padding:14px; display:flex; flex-direction:column; gap:12px;
+    transition:border-color .2s ease, transform .2s ease;
   }
+  .insta-item:hover{border-color:var(--amber); transform:translateY(-3px);}
   .insta-caption{
-    font-family:var(--mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
-    color:var(--amber); margin:0 0 10px; text-align:center;
+    font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--amber); margin:0; text-align:center;
   }
+  .insta-item .instagram-media{border-radius:6px !important; overflow:hidden;}
   .insta-grid iframe{width:100% !important; max-width:100% !important; margin:0 !important;}
   .yt-embed{
     position:relative; width:100%; aspect-ratio:16/9;
-    border:1px solid var(--line-strong); overflow:hidden; background:#000;
+    border-radius:6px; overflow:hidden; background:#000;
   }
   .yt-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
   .insta-more{text-align:center; margin-top:40px;}
   @media (max-width:880px){
-    .insta-grid{columns:2 220px;}
+    .insta-grid{grid-template-columns:repeat(2, 1fr); gap:16px;}
   }
   @media (max-width:640px){
-    .insta-grid{columns:1; max-width:340px;}
+    .insta-grid{grid-template-columns:1fr; max-width:340px; margin:0 auto;}
+    .insta-item{padding:12px;}
   }
   .track-num{font-family:var(--mono); color:var(--amber); font-size:1.1rem;}
   .track-title{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:12px;}
@@ -484,6 +488,8 @@
     .lang-btn{width:34px; height:26px;}
     .vol-btn{padding:8px;}
     .hero-inner{padding:90px 20px 70px;}
+    section{padding:56px 0;}
+    .section-head{margin-bottom:32px;}
   }
 </style>
 </head>
@@ -531,7 +537,7 @@
 
 <div id="top"></div>
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-IMG_8917.jpg');"></div>
+  <div class="hero-bg" style="background-image:url('https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/cropped-IMG_8917.jpg');"></div>
   <div class="hero-inner wrap">
     <p class="eyebrow">Recording · Mixing · Mastering</p>
     <p class="hero-role">Music Producer · Mixing &amp; Mastering Engineer</p>
@@ -547,7 +553,7 @@
 <section class="about" id="acerca">
   <div class="wrap about-grid">
     <div class="about-photo">
-      <img src="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png" alt="Lalo Fernández, productor musical e ingeniero de mezcla y mastering" decoding="async">
+      <img src="https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/Foto-laloproducer-circulo.png" alt="Lalo Fernández, productor musical e ingeniero de mezcla y mastering" decoding="async">
     </div>
     <div class="about-text">
       <p class="eyebrow">About Lalo</p>
@@ -653,7 +659,7 @@
             <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1" aria-label="Volume">
           </div>
           <audio preload="metadata">
-            <source src="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/06/Nuevo-mix-4-portfolio.mp3" type="audio/mpeg">
+            <source src="https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/06/Nuevo-mix-4-portfolio.mp3" type="audio/mpeg">
           </audio>
         </div>
       </div>
@@ -680,7 +686,7 @@
             <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1" aria-label="Volume">
           </div>
           <audio preload="metadata">
-            <source src="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/SINGLE2-FINAL-MASTER.mp3" type="audio/mpeg">
+            <source src="https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/04/SINGLE2-FINAL-MASTER.mp3" type="audio/mpeg">
           </audio>
         </div>
       </div>
@@ -707,7 +713,7 @@
             <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1" aria-label="Volume">
           </div>
           <audio preload="metadata">
-            <source src="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/06/Prayed-by-the-lust-mp3.mp3" type="audio/mpeg">
+            <source src="https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/06/Prayed-by-the-lust-mp3.mp3" type="audio/mpeg">
           </audio>
         </div>
       </div>
@@ -734,7 +740,7 @@
             <input type="range" class="vol-slider" min="0" max="1" step="0.01" value="1" aria-label="Volume">
           </div>
           <audio preload="metadata">
-            <source src="http://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/06/FEARTH-Inner-Pain-mp3.mp3" type="audio/mpeg">
+            <source src="https://web.archive.org/web/20180809170152im_/http://lalofernandezproducer.com/wp-content/uploads/2018/06/FEARTH-Inner-Pain-mp3.mp3" type="audio/mpeg">
           </audio>
         </div>
       </div>
@@ -759,6 +765,7 @@
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CGFO4noKd4k/" data-instgrm-version="14"></blockquote>
       </div>
       <div class="insta-item">
+        <p class="insta-caption">La Zowi</p>
         <div class="yt-embed">
           <iframe src="https://www.youtube.com/embed/2RIst91TbiE" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
