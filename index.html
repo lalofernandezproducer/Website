@@ -96,7 +96,7 @@
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
-  img{max-width:100%;display:block;}
+  img{max-width:100%;display:block; -webkit-user-drag:none; -webkit-user-select:none; user-select:none;}
   a{color:inherit;}
   h1,h2,h3{font-family:var(--display); text-transform:uppercase; margin:0; letter-spacing:.02em;}
   .eyebrow{
@@ -928,6 +928,16 @@
 <script>
   /* ============ nav ============ */
   /* ============ under-construction popup ============ */
+  /* ============ basic image protection (deterrent only, not real security) ============ */
+  document.querySelectorAll('img').forEach(function(img){
+    img.setAttribute('draggable', 'false');
+    img.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  });
+  document.querySelectorAll('.hero-bg, .about-photo').forEach(function(el){
+    el.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  });
+  document.addEventListener('dragstart', function(e){ e.preventDefault(); });
+
   var siteModalOverlay = document.getElementById('site-modal-overlay');
   var siteModalClose = document.getElementById('site-modal-close');
 
