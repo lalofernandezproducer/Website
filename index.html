@@ -236,16 +236,17 @@
   }
   .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
   .hero-logo-wrap{
-    position:relative; display:flex; align-items:center; justify-content:center;
-    aspect-ratio:1/1; max-width:520px; margin:0 auto;
+    position:relative; width:100%; max-width:520px; margin:0 auto;
   }
+  .hero-logo-wrap::before{content:""; display:block; padding-top:100%;}
   .hero-ring{
     position:absolute; inset:6%; border-radius:50%;
     border:1px solid var(--amber);
     box-shadow:0 0 60px 6px rgba(168,85,247,.35), inset 0 0 60px 6px rgba(168,85,247,.15);
   }
   .hero-logo-mark{
-    position:relative; width:56%; max-width:340px; z-index:2;
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:56%; max-width:340px; height:auto; z-index:2;
     filter:drop-shadow(0 0 26px rgba(168,85,247,.45));
   }
 
