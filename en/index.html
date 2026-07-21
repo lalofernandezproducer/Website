@@ -408,6 +408,35 @@
   .cta-banner h2{font-size:clamp(1.5rem,3.4vw,2.1rem); margin-bottom:14px;}
   .cta-banner p{color:var(--text-muted); max-width:520px; margin:0 auto 30px;}
 
+  /* ---------- track delivery ---------- */
+  .delivery{background:var(--bg-panel); border-top:1px solid var(--line);}
+  .delivery-desc{color:var(--text-muted); max-width:480px; margin:0 auto;}
+  .delivery-form{
+    display:flex; gap:14px; max-width:440px; margin:34px auto 0; flex-wrap:wrap;
+  }
+  .delivery-form input{
+    flex:1; min-width:180px; background:var(--bg); border:1px solid var(--line-strong); color:var(--text);
+    padding:13px 16px; font-family:var(--mono); font-size:.9rem; letter-spacing:.04em;
+  }
+  .delivery-form input:focus{border-color:var(--amber);}
+  .delivery-result{
+    max-width:520px; margin:32px auto 0; padding:24px 26px;
+    background:var(--bg); border:1px solid var(--line-strong); border-radius:10px;
+    text-align:center;
+  }
+  .delivery-result.state-notfound, .delivery-result.state-oven{color:var(--text-muted); font-family:var(--serif);}
+  .delivery-result.state-ready .delivery-track-name{
+    font-family:var(--mono); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--amber); margin:0 0 16px;
+  }
+  .delivery-download{
+    display:inline-block; margin-top:18px; background:var(--amber); color:#0a0a0a; border:none;
+    font-family:var(--mono); text-transform:uppercase; letter-spacing:.1em; font-size:.85rem;
+    padding:13px 26px; text-decoration:none; transition:background .15s;
+  }
+  .delivery-download:hover{background:#c084fc;}
+  .delivery-result audio{accent-color:var(--amber); margin:14px 0 6px;}
+
   /* ---------- contact ---------- */
   .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
   .contact-side p{color:var(--text-muted);}
@@ -529,6 +558,7 @@
     .service-grid{grid-template-columns:1fr;}
     .track{grid-template-columns:32px 1fr; padding:18px 16px;}
     .tag{white-space:normal; text-align:left;}
+    .delivery-form{flex-direction:column;}
     .play-btn{width:40px; height:40px;}
     .vol-slider{width:44px;}
     .lang-btn{width:34px; height:26px;}
@@ -558,6 +588,7 @@
       <a href="#trabajos">Work</a>
       <a href="#galeria">Portfolio</a>
       <a href="#contacto">Contact</a>
+      <a href="#descarga">Downloads</a>
     </nav>
     <a href="#contacto" class="btn solid">Get a quote</a>
     <div class="lang-switch" role="group" aria-label="Idioma / Language">
@@ -929,6 +960,21 @@
   </div>
 </section>
 
+<section id="descarga" class="delivery">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Track Delivery</p>
+      <h2>Download your track</h2>
+      <p class="delivery-desc">Enter the code I gave you when your project was finished to listen to and download your track.</p>
+    </div>
+    <form class="delivery-form" id="delivery-form" novalidate>
+      <input type="text" id="delivery-code" name="codigo" placeholder="Enter your code" autocomplete="off" required>
+      <button type="submit" class="btn solid">Search</button>
+    </form>
+    <div class="delivery-result" id="delivery-result" hidden></div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <a href="#top" class="brand">Lalo <span>Fernández</span> <span class="brand-producer">Producer</span></a>
@@ -944,6 +990,49 @@
 <script>
   /* ============ nav ============ */
   /* ============ under-construction popup ============ */
+  /* ============ track delivery ============ */
+  /* Managed by Claude: each new client is added here with a randomly generated code and
+     file name. While the file isn't uploaded yet, "ready:false" shows the
+     "in the oven" message. */
+  var trackDelivery = {
+    'TWHP2978PZ': {
+      name: 'Rock song — mar6as',
+      ready: false,
+      url: 'https://lalofernandezproducer.github.io/Website/deliveries/sbpi6wz3x1gn.wav'
+    }
+  };
+
+  var deliveryForm = document.getElementById('delivery-form');
+  var deliveryInput = document.getElementById('delivery-code');
+  var deliveryResult = document.getElementById('delivery-result');
+
+  deliveryForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var code = deliveryInput.value.trim().toUpperCase();
+    var entry = trackDelivery[code];
+
+    deliveryResult.hidden = false;
+    deliveryResult.className = 'delivery-result';
+
+    if(!entry){
+      deliveryResult.classList.add('state-notfound');
+      deliveryResult.innerHTML = '<p>Code not found. Please check you typed it correctly.</p>';
+      return;
+    }
+
+    if(!entry.ready){
+      deliveryResult.classList.add('state-oven');
+      deliveryResult.innerHTML = '<p>Your track is in the oven, it will be ready soon (please confirm you entered your code correctly).</p>';
+      return;
+    }
+
+    deliveryResult.classList.add('state-ready');
+    deliveryResult.innerHTML =
+      '<p class="delivery-track-name">' + entry.name + '</p>' +
+      '<audio controls preload="metadata" style="width:100%;"><source src="' + entry.url + '" type="audio/wav"></audio>' +
+      '<a class="delivery-download" href="' + entry.url + '" download>Download</a>';
+  });
+
   /* ============ basic image protection (deterrent only, not real security) ============ */
   document.querySelectorAll('img').forEach(function(img){
     img.setAttribute('draggable', 'false');
