@@ -147,7 +147,7 @@
     border-bottom:1px solid var(--line);
   }
   .nav-inner{
-    display:flex; align-items:center; justify-content:space-between;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
     padding:16px 24px;
   }
   .brand{
@@ -217,7 +217,7 @@
   }
   .hero-bg{
     position:absolute; inset:-20px; background-size:cover; background-position:center 25%;
-    opacity:.16; filter:blur(6px) grayscale(30%);
+    background-color:var(--bg); opacity:.16;
   }
   .hero-bg::after{
     content:""; position:absolute; inset:0;
@@ -273,10 +273,10 @@
   .trabajos{background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .about-grid{display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:center;}
   .about-photo{
-    border:1px solid var(--line-strong); border-radius:50%; overflow:hidden;
-    aspect-ratio:1/1;
+    position:relative; border:1px solid var(--line-strong); border-radius:50%; overflow:hidden;
   }
-  .about-photo img{width:100%; height:100%; object-fit:cover; object-position:center top;}
+  .about-photo::before{content:""; display:block; padding-top:100%;}
+  .about-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top;}
   .about-text p{color:var(--text-muted); margin:0 0 16px;}
   .about-text p:last-child{margin-bottom:0;}
 
@@ -339,9 +339,10 @@
   .insta-item .instagram-media{border-radius:6px !important; overflow:hidden;}
   .insta-grid iframe{width:100% !important; max-width:100% !important; margin:0 !important;}
   .yt-embed{
-    position:relative; width:100%; aspect-ratio:16/9;
+    position:relative; width:100%;
     border-radius:6px; overflow:hidden; background:#000;
   }
+  .yt-embed::before{content:""; display:block; padding-top:56.25%;}
   .yt-embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
   .insta-more{text-align:center; margin-top:40px;}
   @media (max-width:880px){
@@ -430,7 +431,13 @@
     background:var(--bg); border:1px solid var(--line-strong); border-radius:10px;
     text-align:center;
   }
-  .delivery-result.state-notfound, .delivery-result.state-oven{color:var(--text-muted); font-family:var(--serif);}
+  .delivery-result.state-notfound, .delivery-result.state-oven, .delivery-result.state-checking{color:var(--text-muted); font-family:var(--serif);}
+  .delivery-oven-title{font-size:1.05rem; margin:0 0 18px;}
+  .delivery-details{margin:0; display:grid; gap:10px; text-align:left; max-width:320px; margin:0 auto;}
+  .delivery-details > div{display:flex; justify-content:space-between; gap:16px; border-bottom:1px solid var(--line); padding-bottom:8px;}
+  .delivery-details dt{font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text-muted); margin:0;}
+  .delivery-details dd{margin:0; font-family:var(--serif); color:var(--text); text-align:right;}
+  .delivery-details-ready{margin-bottom:18px;}
   .delivery-result.state-ready .delivery-track-name{
     font-family:var(--mono); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;
     color:var(--amber); margin:0 0 16px;
@@ -998,13 +1005,16 @@
   /* ============ nav ============ */
   /* ============ under-construction popup ============ */
   /* ============ track delivery ============ */
-  /* Managed by Claude: each new client is added here with a randomly generated code and
-     file name. While the file isn't uploaded yet, "ready:false" shows the
-     "in the oven" message. */
+  /* Managed by Claude: each new client is added here with a randomly generated code.
+     No need to flag "ready" manually — the site checks by itself whether the file
+     has already been uploaded to the deliveries folder and shows the player or the
+     oven message automatically. */
   var trackDelivery = {
     'TWHP2978PZ': {
-      name: 'Rock song — mar6as',
-      ready: false,
+      artist: 'mar6as',
+      track: 'Rock song',
+      startDate: '22/07/2026 0:30',
+      dueDate: '28/07/2026',
       url: 'https://lalofernandezproducer.github.io/Website/deliveries/sbpi6wz3x1gn.wav'
     }
   };
@@ -1013,31 +1023,65 @@
   var deliveryInput = document.getElementById('delivery-code');
   var deliveryResult = document.getElementById('delivery-result');
 
+  function showChecking(){
+    deliveryResult.hidden = false;
+    deliveryResult.className = 'delivery-result state-checking';
+    deliveryResult.innerHTML = '<p>Checking your code…</p>';
+  }
+
+  function showNotFound(){
+    deliveryResult.className = 'delivery-result state-notfound';
+    deliveryResult.innerHTML = '<p>Code not found. Please check you typed it correctly.</p>';
+  }
+
+  function showOven(entry){
+    deliveryResult.className = 'delivery-result state-oven';
+    deliveryResult.innerHTML =
+      '<p class="delivery-oven-title">Your track is in the oven.</p>' +
+      '<dl class="delivery-details">' +
+        '<div><dt>Artist</dt><dd>' + entry.artist + '</dd></div>' +
+        '<div><dt>Track</dt><dd>' + entry.track + '</dd></div>' +
+        '<div><dt>Start</dt><dd>' + entry.startDate + '</dd></div>' +
+        '<div><dt>Expected delivery</dt><dd>' + entry.dueDate + '</dd></div>' +
+      '</dl>';
+  }
+
+  function showReady(entry){
+    deliveryResult.className = 'delivery-result state-ready';
+    deliveryResult.innerHTML =
+      '<dl class="delivery-details delivery-details-ready">' +
+        '<div><dt>Artist</dt><dd>' + entry.artist + '</dd></div>' +
+        '<div><dt>Track</dt><dd>' + entry.track + '</dd></div>' +
+      '</dl>' +
+      '<audio controls preload="metadata" style="width:100%;"><source src="' + entry.url + '" type="audio/wav"></audio>' +
+      '<a class="delivery-download" href="' + entry.url + '" download>Download</a>';
+  }
+
   deliveryForm.addEventListener('submit', function(e){
     e.preventDefault();
     var code = deliveryInput.value.trim().toUpperCase();
     var entry = trackDelivery[code];
 
-    deliveryResult.hidden = false;
-    deliveryResult.className = 'delivery-result';
-
     if(!entry){
-      deliveryResult.classList.add('state-notfound');
-      deliveryResult.innerHTML = '<p>Code not found. Please check you typed it correctly.</p>';
+      deliveryResult.hidden = false;
+      deliveryResult.className = 'delivery-result';
+      showNotFound();
       return;
     }
 
-    if(!entry.ready){
-      deliveryResult.classList.add('state-oven');
-      deliveryResult.innerHTML = '<p>Your track is in the oven, it will be ready soon (please confirm you entered your code correctly).</p>';
-      return;
-    }
+    showChecking();
 
-    deliveryResult.classList.add('state-ready');
-    deliveryResult.innerHTML =
-      '<p class="delivery-track-name">' + entry.name + '</p>' +
-      '<audio controls preload="metadata" style="width:100%;"><source src="' + entry.url + '" type="audio/wav"></audio>' +
-      '<a class="delivery-download" href="' + entry.url + '" download>Download</a>';
+    fetch(entry.url, {method:'HEAD', cache:'no-store'})
+      .then(function(response){
+        if(response.ok){
+          showReady(entry);
+        } else {
+          showOven(entry);
+        }
+      })
+      .catch(function(){
+        showOven(entry);
+      });
   });
 
   /* ============ basic image protection (deterrent only, not real security) ============ */
